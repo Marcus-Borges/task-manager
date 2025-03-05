@@ -1,93 +1,155 @@
 # Bootcamp Claro - Java com Spring Boot
 
-## TaskManagerApi
-TaskManagerApi é uma API REST simples desenvolvida com Spring Boot para gerenciamento de tarefas. Esta aplicação permite criar, listar, atualizar e deletar tarefas de forma eficiente.
+# TaskManagerApi - Gerenciamento Simples de Tarefas
 
-## Tecnologias Utilizadas
+[![Licença: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Java 23](https://img.shields.io/badge/Java-23-red)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3-brightgreen)](https://spring.io/projects/spring-boot)
 
-- **Java 23**: Linguagem de programação utilizada para desenvolver a aplicação.
-- **Spring Boot**: Framework que simplifica o desenvolvimento de aplicações Java, oferecendo configuração automática e suporte a microserviços.
-- **Spring Data JPA**: Facilita a interação com bancos de dados relacionais através da abstração de repositórios.
-- **H2 Database**: Um banco de dados em memória leve, usado para desenvolvimento e testes.
-- **Maven**: Ferramenta de gerenciamento de dependências e construção do projeto.
-- **Postman**: Ferramenta utilizada para testar os endpoints da API.
+O **TaskManagerApi** é uma API RESTful desenvolvida em Java com Spring Boot durante o Bootcamp Claro. Esta aplicação oferece uma maneira simples e eficiente de gerenciar tarefas, permitindo criar, listar, atualizar e excluir registros. Perfeita para desenvolvedores iniciantes ou como base para projetos de microserviços.
 
-## Funcionalidades
+---
 
-- Listar todas as tarefas.
-- Criar uma nova tarefa.
-- Atualizar uma tarefa existente.
-- Deletar uma tarefa pelo ID.
-  
-## Pré-requisitos
+## 📑 Tabela de Conteúdos
 
-Antes de começar, certifique-se de ter instalado em sua máquina:
+- Tecnologias Utilizadas
+
+- Funcionalidades
+
+- Requisitos
+
+- Instalação e Configuração
+
+- Executando a API
+
+- Testando os Endpoints
+
+- Banco de Dados H2
+
+- Diagrama de Classes
+
+- Contribuição
+
+- Licença
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- [![Java](https://img.shields.io/badge/Java-23-red)](https://www.oracle.com/java/) **Java 23**: Linguagem principal do desenvolvimento.
+- [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3-brightgreen)](https://spring.io/projects/spring-boot) **Spring Boot**: Framework para construção ágil de APIs REST.
+- [![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-3.3-green)](https://spring.io/projects/spring-data-jpa) **Spring Data JPA**: Simplifica a persistência de dados em bancos relacionais.
+- [![H2 Database](https://img.shields.io/badge/H2%20Database-2.2.224-blue)](https://www.h2database.com) **H2 Database**: Banco em memória para desenvolvimento e testes.
+- [![Maven](https://img.shields.io/badge/Maven-3.9.6-purple)](https://maven.apache.org) **Maven**: Gerenciamento de dependências e build do projeto.
+- [![Postman](https://img.shields.io/badge/Postman-10-orange)](https://www.postman.com) **Postman**: Ferramenta recomendada para testar os endpoints.
+
+---
+
+## 🎯 Funcionalidades
+
+- 📌 **Listar todas as tarefas**: Retorna todas as tarefas cadastradas.
+
+- ➕ **Criar uma nova tarefa**: Adiciona uma nova tarefa ao sistema.
+
+- ✏ **Atualizar uma tarefa existente**: Modifica uma tarefa existente por ID.
+
+- ❌ **Deletar uma tarefa pelo ID**: Remove uma tarefa específica por ID.
+
+---
+
+## ✅ Pré-requisitos
+
+Antes de começar, instale os seguintes itens:
 
 - [Java JDK 23](https://www.oracle.com/java/technologies/javase-jdk23-downloads.html)
 - [Maven](https://maven.apache.org/download.cgi)
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) (ou outra IDE de sua escolha)
 
-## Configuração do Projeto
-1. Clone este repositório:
+---
+
+## 🔧 Instalação e Configuração do Projeto
+
+Para configurar o projeto localmente:
+
+1. Clone o repositório:
+   ```bash
    git clone https://github.com/seuusuario/taskmanagerapi.git
    cd taskmanagerapi
-3. Abra o projeto na sua IDE (IntelliJ IDEA).
-4. Certifique-se de que todas as dependências estão corretamente configuradas no arquivo pom.xml.
+2. Abra o projeto na sua IDE (ex.: IntelliJ IDEA).
+3. Verifique as dependências no arquivo pom.xml.
 
-## Executando a Aplicação
-Para executar a aplicação, siga os passos abaixo:
-1. Navegue até o diretório raiz do projeto no terminal.
-2. Execute o seguinte comando Maven: mvn spring-boot:run
-3. A aplicação será iniciada na porta padrão 8080.
+---
 
-## Testando a API
-Você pode usar o Postman ou cURL para testar os endpoints da API.
+## ▶ Executando a API
 
-## Listar Tarefas
-Requisição GET: GET http://localhost:8080/api/tarefas
+Para iniciar a API:
 
-## Criar uma Nova Tarefa
-Requisição POST: POST http://localhost:8080/api/tarefas
+1. No terminal, vá até o diretório raiz do projeto.
+2. Execute o comando:
+   ```bash
+   mvn spring-boot:run
 
-## Corpo JSON:
-{
-    "titulo": "Minha nova tarefa",
-    "descricao": "Descrição detalhada da tarefa"
-}
+4. A aplicação estará disponível em http://localhost:8080.
 
-## Atualizar uma Tarefa
-Requisição PUT: PUT http://localhost:8080/api/tarefas/{id}
+---
 
-## Corpo JSON:
-{
-    "titulo": "Título atualizado",
-    "descricao": "Nova descrição"
-}
+## 🔍 Testando os Endpoints
 
-## Deletar uma Tarefa
-Requisição DELETE:
-DELETE http://localhost:8080/api/tarefas/{id}
+Use Postman ou cURL para interagir com os endpoints. Veja os detalhes abaixo:
 
-## Acessando o Console H2
-Para acessar o console H2, abra seu navegador e vá para:
-http://localhost:8080/h2-console
-### Use as seguintes credenciais para login:
+1. 📜 Listar todas as tarefas
+      
+    Método: **GET**
+    
+    URL: http://localhost:8080/api/tarefas
+
+
+2. ➕ Criar uma nova tarefa
+
+    Método: **POST**
+    
+    URL: http://localhost:8080/api/tarefas
+
+      {
+          "titulo": "Minha nova tarefa",
+          "descricao": "Descrição detalhada da tarefa"
+      }
+
+**Resposta:** Status 201 Created com a tarefa criada.
+
+3. ✏ Atualizar uma tarefa
+   
+    Método: **PUT**
+    
+    URL: http://localhost:8080/api/tarefas/{id}
+
+      {
+          "titulo": "Título atualizado",
+          "descricao": "Nova descrição"
+      }
+**Resposta:** Status 200 OK com a tarefa atualizada.
+
+4. ❌ Deletar uma tarefa
+   
+Método: **DELETE**
+
+      URL: http://localhost:8080/api/tarefas/{id}
+
+---
+
+## 🗄 Banco de Dados H2
+
+Acesse o console do H2 para visualizar os dados em memória:
+
+      URL: http://localhost:8080/h2-console
+Credenciais:
 - JDBC URL: jdbc:h2:mem:testdb
-- User Name: sa
-- Password: (deixe em branco)
+- Username: sa
+- Password: (em branco)
 
-## Contribuições
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
+---
 
-## Licença
-Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para mais detalhes.
-
-
-### Considerações Finais
-
-Esse `README.md` fornece uma visão geral clara das tecnologias utilizadas no projeto, instruções para configuração e execução, além de exemplos de como interagir com a API. Você pode personalizar ainda mais conforme necessário, adicionando seções sobre contribuição, licença ou qualquer outra informação relevante ao seu projeto. Se precisar de mais assistência ou ajustes no conteúdo, sinta-se à vontade para perguntar!
-
-## Diagrama de Classes (Domínio da API)
+## 📊 Diagrama de Classes
 
 ```mermaid
 classDiagram
@@ -154,3 +216,25 @@ classDiagram
     Controller --> TarefaController
 
 ```
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Para contribuir:
+
+Fork o repositório
+
+Crie uma branch (git checkout -b feature-nova)
+
+Commit suas alterações (git commit -m 'Adicionando nova funcionalidade')
+
+Push para a branch (git push origin feature-nova)
+
+Abra um Pull Request
+
+## 📜 Licença
+
+Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para mais detalhes.
+
+⌨️ Marcus-Borges -
+[Github](https://github.com/Marcus-Borges)
+
