@@ -1,4 +1,12 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Marcus-Borges/task-manager/main/task_manager.jpg" alt="Task Manager Logo" width="250"/>
+</div>
+
+<div align="center">
+   
 # Bootcamp Claro - Java com Spring Boot
+
+</div>
 
 # TaskManagerApi - Gerenciamento Simples de Tarefas
 
